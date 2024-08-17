@@ -8,9 +8,6 @@ La página es responsiva (adaptable a diferentes tamaños de pantalla) e incluye
 
 [Proyecto Desplegado (https://portafolio-gablim20.vercel.app/)](https://portafolio-gablim20.vercel.app/)
 
-## Secciones de mi sitio
-![Presentacion](assets/background.jpg)
-
 ## Tecnología
 
 * HTML

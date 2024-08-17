@@ -1,196 +1,209 @@
 body {
-    min-height: 100vh;
-  } 
-  
-  main {
-    flex: 1 0 auto;
-    overflow-y: auto;
-  }
-  
-  h1.title,
-  .footer-copyright a {
-    font-family: 'Architects Daughter', cursive;
-    text-transform: uppercase;
-    font-weight: 900;
-  }
-  
-  /* start welcome animation */
-  
-  body.welcome {
-    background: #5f94d6;
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
-    animation: allowScroll 3.5s forwards; 
-  }
-  
-  .welcome .splash {
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  overflow-y: auto;
+}
+
+h1.title,
+.footer-copyright a {
+  font-family: 'Architects Daughter', cursive;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+/* start welcome animation */
+
+body.welcome {
+  background: #5f94d6;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  animation: allowScroll 3.5s forwards;
+}
+
+.welcome .splash {
+  height: 0px;
+  padding: 0px;
+  border: 130em solid #039be5;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  display: block;
+  box-sizing: initial;
+  overflow: hidden;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+
+.welcome #welcome {
+  background: #311b92;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+}
+
+/* moveIn */
+.welcome header,
+.welcome a.btn {
+  opacity: 0;
+  animation: moveIn 2s 3.1s ease forwards;
+}
+
+
+@keyframes init {
+  0% {
+    width: 0px;
     height: 0px;
-    padding: 0px;
-    border: 130em solid #039be5;
-    position: fixed;
-    left: 50%;
-    top: 100%;
-    display: block;
-    box-sizing: initial;
-    overflow: hidden;
-  
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
   }
-  
-  .welcome #welcome {
-    background: #311b92 ;
+
+  100% {
     width: 56px;
     height: 56px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    overflow: hidden;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+    margin-top: 0px;
+    opacity: 1;
   }
-     
-  /* moveIn */
-  .welcome header,
-  .welcome a.btn {
-    opacity: 0;
-    animation: moveIn 2s 3.1s ease forwards;
-  }
-  
-  
-  @keyframes init {
-    0% {
-      width: 0px;
-      height: 0px;
-    }
-    100% {
-      width: 56px;
-      height: 56px;
-      margin-top: 0px;
-      opacity: 1;
-    }
-  }
-  
-  @keyframes puff {
-    0% {
-      top: 100%;
-      height: 0px;
-      padding: 0px;
-    }
-    100% {
-      top: 50%;
-      height: 100%;
-      padding: 0px 100%;
-    }
-  }
-  
-  @keyframes borderRadius {
-    0% {
-      border-radius: 50%;
-    }
-    100% {
-      border-radius: 0px;
-    }
-  }
-  
-  @keyframes moveDown {
-    0% {
-      top: 50%;
-    }
-    50% {
-      top: 40%;
-    }
-    100% {
-      top: 100%;
-    }
-  }
-  @keyframes allowScroll {
-    0% {
-      overflow: hidden;
-    }
-    100% {
-      overflow: auto; /* Permitir scroll después de la animación */
-    }
-  }
-  
-  @keyframes moveUp {
-    0% {
-      background: #311b92;
-      top: 100%;
-    }
-    50% {
-      top: 40%;
-    }
-    100% {
-      top: 50%;
-      background: #039be5;
-    }
-  }
-  
-  @keyframes materia {
-    0% {
-      background: #039be5;
-    }
-    50% {
-      background: #039be5;
-      top: 26px;
-    }
-    100% {
-      background: #311b92;
-      width: 100%;
-      height: 64px;
-      border-radius: 0px;
-      top: 26px;
-    }
-  }
-  
-  @keyframes moveIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes hide {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  } 
-  .principal-footer {
-    background-color: #1e044a;
 }
-header{
-  height:80px;
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+
+  100% {
+    border-radius: 0px;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes allowScroll {
+  0% {
+    overflow: hidden;
+  }
+
+  100% {
+    overflow: auto;
+    /* Permitir scroll después de la animación */
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #311b92;
+    top: 100%;
+  }
+
+  50% {
+    top: 40%;
+  }
+
+  100% {
+    top: 50%;
+    background: #039be5;
+  }
+}
+
+@keyframes materia {
+  0% {
+    background: #039be5;
+  }
+
+  50% {
+    background: #039be5;
+    top: 26px;
+  }
+
+  100% {
+    background: #311b92;
+    width: 100%;
+    height: 64px;
+    border-radius: 0px;
+    top: 26px;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+header {
+  height: 80px;
   z-index: 1000;
 }
 
 .nav-list {
   display: flex;
   width: 50%;
-  justify-content: space-around; 
-  align-items: center; 
+  justify-content: space-around;
+  align-items: center;
 }
 
 .nav-item {
-  list-style-type: none; 
-  cursor: pointer; 
+  list-style-type: none;
+  cursor: pointer;
   overflow: hidden;
-  color: #370535; 
+  color: #370535;
 }
 
 .nav-item::after {
   content: "";
   display: block;
   height: 2px;
-  background-image: linear-gradient(to right top, #152a48, #004d7a, #3783da, #9fc6f0, #ffffff); /* Gradiente de color */
+  background-image: linear-gradient(to right top, #152a48, #004d7a, #3783da, #9fc6f0, #ffffff);
+  /* Gradiente de color */
   transform: translateX(-101%);
   transition: transform ease 0.3s;
 }
@@ -199,30 +212,59 @@ header{
   transform: translateX(0%);
 }
 
-#presentacion{
+#presentacion {
   min-height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: start; 
+  justify-content: start;
 }
 
-.container-project{
+
+.hero {
+  text-align: center;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-container p {
+  text-align: center;
+  font-size: 25px;
+  width: 50%;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.hero-imagen {
+  margin-top: 50px;
+  width: 300px;
+  height: 300px;
+  border: 4px solid #fff;
+}
+
+
+.container-project {
   margin-top: 80px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
   gap: 32px;
 }
 
-.proyecto{
+.proyecto {
   background: #f7f7f7;
   border-radius: 16px;
   overflow: hidden;
   width: 300px;
-  
+
 
 }
 
-.card-inner-project{
+.card-inner-project {
   position: relative;
   width: 100%;
   height: 200px;
@@ -247,7 +289,7 @@ header{
 .imgBox img {
   width: 100%;
   height: 100%;
-  object-fit:scale-down;
+  object-fit: scale-down;
 }
 
 .icon {
@@ -303,45 +345,61 @@ header{
   padding: 6px 10px;
   border-radius: 3px;
 }
-.proyectos .logo{
+
+.proyectos .logo {
   font-size: 30px;
 }
+
 a {
   text-decoration: none;
 }
 
+p{
+  font-weight: 500;
+}
+
+/*Footer*/
+.principal-footer {
+  background-color: #1e044a;
+}
+
+/* Cosas globales  */
 
 .border {
   border-radius: 5px;
   background-color: #d39acc;
 }
+
 .html {
   border-radius: 5px;
   background-color: #d39a9a;
 }
-.bootstrap{
+
+.bootstrap {
   border-radius: 5px;
   background-color: #ba9ad3;
 }
-.js{
+
+.js {
   border-radius: 5px;
   background-color: #c8d39a;
 }
 
+.new-amsterdam-regular {
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  .new-amsterdam-regular {
-    font-family: "New Amsterdam", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
- 
-  
-  
+
+
 .text-shadow-1 {
   text-shadow: 1px -2px 8px rgb(143, 54, 238);
 }
-
-.bg-dark-purple {
-  background-color: rgb(89, 105, 197); 
+.text-shadow-2 {
+  text-shadow: 1px -2px 8px rgb(12, 10, 14);
 }
 
+.bg-dark-purple {
+  background-color: rgb(89, 105, 197);
+}

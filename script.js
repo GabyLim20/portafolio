@@ -47,3 +47,5 @@ async function copiarAlPortapapeles(texto) {
     console.error('Error al copiar:', err);
   }
 }
+
+
